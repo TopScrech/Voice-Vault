@@ -56,9 +56,13 @@ final class AudioRecorder {
         let recordingFileURL = tempDirectory.appendingPathComponent(recordingName).appendingPathExtension("m4a")
         recordingURL = recordingFileURL
         
+        let storage = ValueStorage()
+        let selectedCodec = storage.selectedCodec.rawValue
+        let bitrate = storage.bitrate
+        
         let settings = [
-            AVFormatIDKey: Int(kAudioFormatAppleLossless),
-            AVSampleRateKey: 48000,
+            AVFormatIDKey: selectedCodec,
+            AVSampleRateKey: bitrate,
             AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]
