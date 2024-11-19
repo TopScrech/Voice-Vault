@@ -50,7 +50,7 @@ final class AudioRecorder {
         }
         
         recordingDate = currentDateTime
-        recordingName = "\(currentDateTime.toString(dateFormat: "dd-MM-YY_'at'_HH:mm:ss"))"
+        recordingName = "\(currentDateTime.toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss"))"
         
         let tempDirectory = FileManager.default.temporaryDirectory
         let recordingFileURL = tempDirectory.appendingPathComponent(recordingName).appendingPathExtension("m4a")
