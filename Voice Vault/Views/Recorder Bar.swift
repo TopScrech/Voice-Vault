@@ -83,4 +83,5 @@ struct RecorderBar: View {
 #Preview {
     RecorderBar()
         .environment(AudioPlayer())
+        .environment(AudioRecorder())
 }
