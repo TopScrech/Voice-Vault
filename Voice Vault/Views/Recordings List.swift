@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 import SwiftData
 
 struct RecordingsList: View {
@@ -8,6 +8,8 @@ struct RecordingsList: View {
     @Environment(\.modelContext) private var modelContext
     @Query(animation: .default) private var recordings: [Recording]
     
+    @State private var sheetSettings = false
+    
     var body: some View {
         List {
             ForEach(recordings) { recording in
@@ -16,6 +18,14 @@ struct RecordingsList: View {
             .onDelete(perform: delete)
         }
         .navigationTitle("Voice Vault")
+        .toolbar {
+            SFButton("gear") {
+                sheetSettings = true
+            }
+        }
+        .sheet($sheetSettings) {
+            SettingsView()
+        }
         .safeAreaInset(edge: .bottom) {
             VStack {
                 PlayerBar()
