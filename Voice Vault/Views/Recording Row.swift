@@ -10,18 +10,22 @@ struct RecordingRow: View {
         self.recording = recording
     }
     
-    var isPlayingThisRecording: Bool {
+    private var isPlaying: Bool {
         audioPlayer.currentlyPlaying?.id == recording.id
     }
     
+    @State private var alertRename = false
+    
     var body: some View {
+        @Bindable var recording = recording
+        
         Button {
             audioPlayer.startPlayback(recording)
         } label: {
             HStack {
                 VStack(alignment: .leading) {
                     Text(recording.name)
-                        .fontWeight(isPlayingThisRecording ? .bold : .regular)
+                        .fontWeight(isPlaying ? .bold : .regular)
                     
                     Group {
                         let recordingData = recording.recordingData
@@ -38,6 +42,27 @@ struct RecordingRow: View {
             }
         }
         .foregroundStyle(.foreground)
+        .alert("Rename", isPresented: $alertRename) {
+            TextField("New Name", text: $recording.name)
+        }
+        .contextMenu {
+#warning("Implement sharing")
+            
+            //            ShareLink(item: <#T##URL#>)
+            
+            Button {
+                alertRename = true
+            } label: {
+                Label("Rename", systemImage: "pencil")
+            }
+            
+#warning("Implement deleting")
+            //            Button {
+            //                delete()
+            //            } label: {
+            //                Label("Delete", systemImage: "trash")
+            //            }
+        }
     }
     
     private func getDuration(_ recordingData: Data) -> TimeInterval? {
