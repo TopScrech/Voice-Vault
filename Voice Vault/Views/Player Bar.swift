@@ -49,7 +49,7 @@ struct PlayerBar: View {
                             .imageScale(.large)
                     }
                     
-                    // Recording name
+                    // Name
                     Text(currentlyPlaying.name)
                         .semibold()
                         .lineLimit(1)

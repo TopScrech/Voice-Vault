@@ -75,7 +75,7 @@ struct RecorderBar: View {
     }
     
     func stopRecording() {
-        // Stop Recording
+        // Stop
         audioRecorder.stopRecording(modelContext: modelContext)
     }
 }
