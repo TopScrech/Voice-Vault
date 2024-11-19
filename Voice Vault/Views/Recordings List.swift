@@ -1,6 +1,5 @@
 import SwiftUI
 import SwiftData
-import AVFoundation
 
 struct RecordingsList: View {
     @State private var audioPlayer = AudioPlayer()
