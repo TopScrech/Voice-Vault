@@ -43,6 +43,8 @@ struct RecordingsList: View {
             recordings[$0]
         }
         .forEach(modelContext.delete)
+        
+        try! modelContext.save()
     }
 }
 

@@ -8,7 +8,10 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     var isPlaying = false
     
     func startPlayback(_ recording: Recording) {
-        let recordingData = recording.recordingData
+        guard let recordingData = recording.recordingData else {
+            return
+        }
+        
         let playbackSession = AVAudioSession.sharedInstance()
         
         do {

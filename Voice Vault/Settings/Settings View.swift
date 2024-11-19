@@ -54,11 +54,7 @@ struct SettingsView: View {
             modelContext.delete(rec)
         }
         
-        do {
-            try modelContext.save()
-        } catch {
-            print("Not saved")
-        }
+        try! modelContext.save()
     }
 }
 

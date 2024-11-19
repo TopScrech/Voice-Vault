@@ -114,6 +114,7 @@ final class AudioRecorder {
         )
         
         modelContext.insert(newRecording)
+        try! modelContext.save()
         
         deleteRecordingFile()
     }

@@ -29,9 +29,7 @@ struct RecordingRow: View {
                         .bold(isPlaying)
                     
                     HStack {
-                        let recordingData = rec.recordingData
-                        
-                        if let duration = getDuration(recordingData) {
+                        if let recordingData = rec.recordingData, let duration = getDuration(recordingData) {
                             Text(DateComponentsFormatter.positional.string(from: duration) ?? "0:00")
                         }
                         
@@ -57,7 +55,9 @@ struct RecordingRow: View {
         .contextMenu {
 #warning("Implement sharing")
             
-            //            ShareLink(item: <#T##URL#>)
+            //            if let data = rec.recordingData, let url = try? AVAudioPlayer(data: data).url {
+            //                ShareLink(item: url)
+            //            }
             
             Button {
                 alertRename = true
@@ -69,6 +69,7 @@ struct RecordingRow: View {
             
             Button(role: .destructive) {
                 modelContext.delete(rec)
+                try! modelContext.save()
             } label: {
                 Label("Delete", systemImage: "trash")
             }
