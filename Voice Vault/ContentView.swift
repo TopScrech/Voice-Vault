@@ -1,10 +1,3 @@
-////
-////  ContentView.swift
-////  Voice Vault
-////
-////  Created by Sergei Saliukov on 19/11/24.
-////
-//
 //import SwiftUI
 //import SwiftData
 //
