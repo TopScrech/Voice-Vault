@@ -5,12 +5,13 @@ import AVFoundation
 @Observable
 final class AudioRecorder {
     var audioRecorder: AVAudioRecorder?
+    var isRecording = false
+    
     private var recordingName = "Recording1"
     private var recordingDate = Date()
     private var recordingURL: URL?
-    var isRecording = false
-    let currentDateTime = Date.now
     
+    private let currentDateTime = Date.now
     
     // MARK: - Start Recording
     func startRecording() {
