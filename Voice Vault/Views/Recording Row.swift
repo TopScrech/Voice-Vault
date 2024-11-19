@@ -2,6 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct RecordingRow: View {
+    @Environment(\.modelContext) private var modelContext
     @Environment(AudioPlayer.self) private var audioPlayer
     
     private var recording: Recording
@@ -64,12 +65,13 @@ struct RecordingRow: View {
                 Label("Rename", systemImage: "pencil")
             }
             
-#warning("Implement deleting")
-            //            Button {
-            //                delete()
-            //            } label: {
-            //                Label("Delete", systemImage: "trash")
-            //            }
+            Divider()
+            
+            Button(role: .destructive) {
+                modelContext.delete(recording)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
         }
     }
     
