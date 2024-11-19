@@ -22,6 +22,7 @@ struct RecordingsList: View {
             SFButton("gear") {
                 sheetSettings = true
             }
+            .disabled(audioRecorder.isRecording)
         }
         .sheet($sheetSettings) {
             SettingsView()

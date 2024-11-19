@@ -5,14 +5,14 @@ struct SettingsView: View {
     //    @State private var bitrateString = ""
     
     private let bitrates = [
-        1000,
-        6000,
-        8000,
-        10000,
-        12000,
-        48000,
-        96000,
-        196000
+        1,
+        6,
+        8,
+        10,
+        12,
+        48,
+        96,
+        196
     ]
     
     var body: some View {

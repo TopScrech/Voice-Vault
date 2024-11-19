@@ -57,11 +57,11 @@ final class AudioRecorder {
         recordingURL = recordingFileURL
         
         let storage = ValueStorage()
-        let selectedCodec = storage.selectedCodec.rawValue
-        let bitrate = storage.bitrate
+        let codec = storage.selectedCodec.rawValue
+        let bitrate = storage.bitrate * 1000
         
         let settings = [
-            AVFormatIDKey: selectedCodec,
+            AVFormatIDKey: codec,
             AVSampleRateKey: bitrate,
             AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
@@ -80,7 +80,7 @@ final class AudioRecorder {
     }
     
     // MARK: - Stop Recording
-    func stopRecording(modelContext: ModelContext) {
+    func stopRecording(_ modelContext: ModelContext) {
         audioRecorder?.stop()
         
         withAnimation {
@@ -90,7 +90,7 @@ final class AudioRecorder {
         if let recordingURL {
             do {
                 let recordingData = try Data(contentsOf: recordingURL)
-                saveRecordingToSwiftData(recordingData: recordingData, modelContext: modelContext)
+                saveNewRecording(modelContext, recordingData)
             } catch {
                 print("Stop Recording - Could not save to SwiftData: \(error)")
             }
@@ -100,11 +100,17 @@ final class AudioRecorder {
     }
     
     // MARK: - SwiftData Integration
-    private func saveRecordingToSwiftData(recordingData: Data, modelContext: ModelContext) {
+    private func saveNewRecording(_ modelContext: ModelContext, _ recordingData: Data) {
+        let storage = ValueStorage()
+        let codec = storage.selectedCodec.name
+        let bitrate = storage.bitrate
+
         let newRecording = Recording(
             createdAt: currentDateTime,
             name: recordingName,
-            recordingData: recordingData
+            recordingData: recordingData,
+            bitrate: bitrate,
+            codec: codec
         )
         
         modelContext.insert(newRecording)

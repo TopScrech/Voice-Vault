@@ -27,15 +27,23 @@ struct RecordingRow: View {
                     Text(recording.name)
                         .fontWeight(isPlaying ? .bold : .regular)
                     
-                    Group {
+                    HStack {
                         let recordingData = recording.recordingData
                         
                         if let duration = getDuration(recordingData) {
                             Text(DateComponentsFormatter.positional.string(from: duration) ?? "0:00")
-                                .caption2()
-                                .secondary()
+                        }
+                        
+                        if let codec = recording.codec {
+                            Text(codec)
+                        }
+                        
+                        if let bitrate = recording.bitrate {
+                            Text("\(bitrate) kHz")
                         }
                     }
+                    .caption2()
+                    .secondary()
                 }
                 
                 Spacer()
