@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 import SwiftData
 import AVFoundation
 
@@ -6,12 +6,37 @@ import AVFoundation
 final class AudioRecorder {
     var audioRecorder: AVAudioRecorder?
     var isRecording = false
+    var isPermissionGranted = false
     
     private var recordingName = "Recording1"
     private var recordingDate = Date()
     private var recordingURL: URL?
     
     private let currentDateTime = Date.now
+    
+    init() {
+        checkAndRequestMicAccess()
+    }
+    
+    func checkAndRequestMicAccess() {
+        switch AVAudioApplication.shared.recordPermission {
+        case .granted:
+            isPermissionGranted = true
+            
+        case .denied:
+            isPermissionGranted = false
+            
+        case .undetermined:
+            AVAudioApplication.requestRecordPermission { granted in
+                main {
+                    self.isPermissionGranted = granted
+                }
+            }
+            
+        default:
+            isPermissionGranted = false
+        }
+    }
     
     // MARK: - Start Recording
     func startRecording() {

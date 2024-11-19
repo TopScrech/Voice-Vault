@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 import AVFoundation
 
 final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
@@ -7,12 +7,12 @@ final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
     var audioPlayer: AVAudioPlayer?
     
-    func startPlayback(recording: Recording) {
+    func startPlayback(_ recording: Recording) {
         let recordingData = recording.recordingData
         let playbackSession = AVAudioSession.sharedInstance()
         
         do {
-            try playbackSession.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.spokenAudio)
+            try playbackSession.setCategory(.playback, mode: .spokenAudio)
             try playbackSession.setActive(true)
             print("Start Recording - Playback session setted")
         } catch {
@@ -36,13 +36,6 @@ final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
                 currentlyPlaying = nil
             }
         }
-        //        } else {
-        //            print("Play Recording - Could not get the recording data")
-        //
-        //            withAnimation {
-        //                currentlyPlaying = nil
-        //            }
-        //        }
     }
     
     func pausePlayback() {
@@ -65,7 +58,7 @@ final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             isPlaying = false
             print("Play Recording - Stopped")
             
-            withAnimation(.spring()) {
+            withAnimation(.spring) {
                 self.currentlyPlaying = nil
             }
         } else {
@@ -78,7 +71,7 @@ final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             isPlaying = false
             print("Play Recording - Recoring finished playing")
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            delay(1) {
                 withAnimation(.spring) {
                     self.currentlyPlaying = nil
                 }

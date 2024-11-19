@@ -2,13 +2,12 @@ import SwiftUI
 
 struct RecorderBar: View {
     @Environment(\.modelContext) private var modelContext
-    
     @Environment(AudioRecorder.self) private var audioRecorder
     @ObservedObject var audioPlayer: AudioPlayer
     
-    @State var buttonSize: CGFloat = 1
+    @State private var buttonSize = 1.0
     
-    var repeatingAnimation: Animation {
+    private var repeatingAnimation: Animation {
         Animation.linear(duration: 0.5)
             .repeatForever()
     }
@@ -17,10 +16,10 @@ struct RecorderBar: View {
         VStack {
             if let audioRecorder = audioRecorder.audioRecorder, audioRecorder.isRecording {
                 TimelineView(.periodic(from: .now, by: 1)) { _ in
-                    // recording duration
+                    // Duration
                     Text(DateComponentsFormatter.positional.string(from: audioRecorder.currentTime) ?? "0:00")
-                        .font(.title3)
-                        .fontWeight(.semibold)
+                        .title3()
+                        .semibold()
                 }
                 .transition(.scale)
             }
@@ -62,15 +61,15 @@ struct RecorderBar: View {
     
     func startRecording() {
         if audioPlayer.audioPlayer?.isPlaying ?? false {
-            // stop any playing recordings
+            // Stop any playback
             audioPlayer.stopPlayback()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                // Start Recording
+                // Start
                 audioRecorder.startRecording()
             }
         } else {
-            // Start Recording
+            // Start
             audioRecorder.startRecording()
         }
     }
