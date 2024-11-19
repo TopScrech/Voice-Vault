@@ -6,7 +6,9 @@ struct SettingsView: View {
     
     private let bitrates = [
         1000,
+        6000,
         8000,
+        10000,
         12000,
         48000,
         96000,
