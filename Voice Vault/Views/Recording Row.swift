@@ -5,41 +5,41 @@ struct RecordingRow: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AudioPlayer.self) private var audioPlayer
     
-    private var recording: Recording
+    private var rec: Recording
     
-    init(_ recording: Recording) {
-        self.recording = recording
+    init(_ rec: Recording) {
+        self.rec = rec
     }
     
     private var isPlaying: Bool {
-        audioPlayer.currentlyPlaying?.id == recording.id
+        audioPlayer.currentlyPlaying?.id == rec.id
     }
     
     @State private var alertRename = false
     
     var body: some View {
-        @Bindable var recording = recording
+        @Bindable var rec = rec
         
         Button {
-            audioPlayer.startPlayback(recording)
+            audioPlayer.startPlayback(rec)
         } label: {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(recording.name)
-                        .fontWeight(isPlaying ? .bold : .regular)
+                    Text(rec.name)
+                        .bold(isPlaying)
                     
                     HStack {
-                        let recordingData = recording.recordingData
+                        let recordingData = rec.recordingData
                         
                         if let duration = getDuration(recordingData) {
                             Text(DateComponentsFormatter.positional.string(from: duration) ?? "0:00")
                         }
                         
-                        if let codec = recording.codec {
+                        if let codec = rec.codec {
                             Text(codec)
                         }
                         
-                        if let bitrate = recording.bitrate {
+                        if let bitrate = rec.bitrate {
                             Text("\(bitrate) kHz")
                         }
                     }
@@ -52,7 +52,7 @@ struct RecordingRow: View {
         }
         .foregroundStyle(.foreground)
         .alert("Rename", isPresented: $alertRename) {
-            TextField("New Name", text: $recording.name)
+            TextField("New Name", text: $rec.name)
         }
         .contextMenu {
 #warning("Implement sharing")
@@ -68,7 +68,7 @@ struct RecordingRow: View {
             Divider()
             
             Button(role: .destructive) {
-                modelContext.delete(recording)
+                modelContext.delete(rec)
             } label: {
                 Label("Delete", systemImage: "trash")
             }
@@ -79,7 +79,7 @@ struct RecordingRow: View {
         do {
             return try AVAudioPlayer(data: recordingData).duration
         } catch {
-            print("Failed to get the duration for recording on the list: Recording Name - \(recording.name)")
+            print("Failed to get the duration for recording on the list: Recording Name - \(rec.name)")
             return nil
         }
     }
