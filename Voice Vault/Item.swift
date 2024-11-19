@@ -1,18 +1,11 @@
+//import Foundation
+//import SwiftData
 //
-//  Item.swift
-//  Voice Vault
-//
-//  Created by Sergei Saliukov on 19/11/24.
-//
-
-import Foundation
-import SwiftData
-
-@Model
-final class Item {
-    var timestamp: Date
-    
-    init(timestamp: Date) {
-        self.timestamp = timestamp
-    }
-}
+//@Model
+//final class Item {
+//    var timestamp: Date
+//    
+//    init(timestamp: Date) {
+//        self.timestamp = timestamp
+//    }
+//}
