@@ -1,8 +1,11 @@
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
+    @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var storage: ValueStorage
-    //    @State private var bitrateString = ""
+    
+    @Query private var recordings: [Recording]
     
     private let bitrates = [
         1,
@@ -33,11 +36,31 @@ struct SettingsView: View {
                             .tag(bitrate)
                     }
                 }
+                
+#if DEBUG
+                Section {
+                    Button("Delete All", role: .destructive) {
+                        deleteAll()
+                    }
+                }
+#endif
             }
             .navigationTitle("Settings")
         }
         .presentationDetents([.medium, .large])
         .presentationDragIndicator(.hidden)
+    }
+    
+    private func deleteAll() {
+        for rec in recordings {
+            modelContext.delete(rec)
+        }
+        
+        do {
+            try modelContext.save()
+        } catch {
+            print("Not saved")
+        }
     }
 }
 

@@ -39,12 +39,10 @@ struct RecordingsList: View {
     }
     
     private func delete(at offsets: IndexSet) {
-        withAnimation {
-            offsets.map {
-                recordings[$0]
-            }
-            .forEach(modelContext.delete)
+        offsets.map {
+            recordings[$0]
         }
+        .forEach(modelContext.delete)
     }
 }
 
