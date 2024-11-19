@@ -32,18 +32,16 @@ struct SettingsView: View {
                 
                 Picker("Bitrate", selection: $storage.bitrate) {
                     ForEach(bitrates, id: \.self) { bitrate in
-                        Text(bitrate)
+                        Text("\(bitrate) kHz")
                             .tag(bitrate)
                     }
                 }
                 
-#if DEBUG
                 Section {
-                    Button("Delete All", role: .destructive) {
+                    Button("Delete all recordings", role: .destructive) {
                         deleteAll()
                     }
                 }
-#endif
             }
             .navigationTitle("Settings")
         }
