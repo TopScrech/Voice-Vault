@@ -3,6 +3,8 @@ import SwiftData
 
 @main
 struct VoiceVault: App {
+    @StateObject private var storage = ValueStorage()
+    
     private let container: ModelContainer
     
     init() {
@@ -20,6 +22,7 @@ struct VoiceVault: App {
     var body: some Scene {
         WindowGroup {
             AppContainer()
+                .environmentObject(storage)
         }
         .modelContainer(container)
     }

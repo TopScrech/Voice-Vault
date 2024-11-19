@@ -21,6 +21,7 @@
 		F32B05642CECA9AF00D321BD /* App Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05632CECA9AF00D321BD /* App Container.swift */; };
 		F3D036FA2CECB6B900C4E1AC /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D036F92CECB6B900C4E1AC /* Settings View.swift */; };
 		F3D036FD2CECB79200C4E1AC /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D036FC2CECB79200C4E1AC /* Codec.swift */; };
+		F3D036FF2CECD01E00C4E1AC /* Value Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D036FE2CECD01E00C4E1AC /* Value Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F32B05632CECA9AF00D321BD /* App Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Container.swift"; sourceTree = "<group>"; };
 		F3D036F92CECB6B900C4E1AC /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
 		F3D036FC2CECB79200C4E1AC /* Codec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codec.swift; sourceTree = "<group>"; };
+		F3D036FE2CECD01E00C4E1AC /* Value Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Storage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D036F92CECB6B900C4E1AC /* Settings View.swift */,
+				F3D036FE2CECD01E00C4E1AC /* Value Storage.swift */,
 				F3D036FC2CECB79200C4E1AC /* Codec.swift */,
 			);
 			path = Settings;
@@ -213,6 +216,7 @@
 				F32B05532CECA2FD00D321BD /* Extensions.swift in Sources */,
 				F32B05542CECA2FD00D321BD /* Recordings List.swift in Sources */,
 				F32B05642CECA9AF00D321BD /* App Container.swift in Sources */,
+				F3D036FF2CECD01E00C4E1AC /* Value Storage.swift in Sources */,
 				F32B05552CECA2FD00D321BD /* Player Bar.swift in Sources */,
 				F32B05562CECA2FD00D321BD /* Audio Player.swift in Sources */,
 				F32B05572CECA2FD00D321BD /* Audio Recorder.swift in Sources */,

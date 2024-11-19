@@ -1,9 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("selected_codec") private var selectedCodec: Codec = .appleLossless
-    @AppStorage("bitrate") private var bitrate = 48000
-    
+    @EnvironmentObject private var storage: ValueStorage
     //    @State private var bitrateString = ""
     
     private let bitrates = [
@@ -18,7 +16,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Picker("Codec", selection: $selectedCodec) {
+                Picker("Codec", selection: $storage.selectedCodec) {
                     ForEach(Codec.allCases, id: \.rawValue) { codec in
                         Text(codec.name)
                             .tag(codec)
@@ -27,7 +25,7 @@ struct SettingsView: View {
                 .pickerStyle(.navigationLink)
                 .scrollIndicators(.never)
                 
-                Picker("Bitrate", selection: $bitrate) {
+                Picker("Bitrate", selection: $storage.bitrate) {
                     ForEach(bitrates, id: \.self) { bitrate in
                         Text(bitrate)
                             .tag(bitrate)
@@ -43,4 +41,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environmentObject(ValueStorage())
 }
