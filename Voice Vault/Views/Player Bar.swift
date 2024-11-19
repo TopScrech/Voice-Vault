@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct PlayerBar: View {
-    @ObservedObject var audioPlayer: AudioPlayer
+    @Environment(AudioPlayer.self) private var audioPlayer
     
     @State private var sliderValue = 0.0
     @State private var isDragging = false
     
-    let timer = Timer
+    private let timer = Timer
         .publish(every: 1/120, on: .main, in: .common)
         .autoconnect()
     
@@ -85,5 +85,6 @@ struct PlayerBar: View {
 }
 
 #Preview {
-    PlayerBar(audioPlayer: AudioPlayer())
+    PlayerBar()
+        .environment(AudioPlayer())
 }

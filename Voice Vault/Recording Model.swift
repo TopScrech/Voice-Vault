@@ -3,14 +3,21 @@ import SwiftData
 
 @Model
 final class Recording {
-    var createdAt: Date
-    var id: UUID
+    @Attribute(.unique)
+    var id: UUID = UUID()
+    
     var name: String
+    var createdAt: Date
+    
+    @Attribute(.allowsCloudEncryption)
     var recordingData: Data
     
-    init(createdAt: Date = Date(), id: UUID = UUID(), name: String, recordingData: Data) {
+    init(
+        createdAt: Date = Date(),
+        name: String,
+        recordingData: Data
+    ) {
         self.createdAt = createdAt
-        self.id = id
         self.name = name
         self.recordingData = recordingData
     }

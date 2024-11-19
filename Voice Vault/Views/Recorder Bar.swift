@@ -3,7 +3,7 @@ import SwiftUI
 struct RecorderBar: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AudioRecorder.self) private var audioRecorder
-    @ObservedObject var audioPlayer: AudioPlayer
+    @Environment(AudioPlayer.self) private var audioPlayer
     
     @State private var buttonSize = 1.0
     
@@ -81,5 +81,6 @@ struct RecorderBar: View {
 }
 
 #Preview {
-    RecorderBar(audioPlayer: AudioPlayer())
+    RecorderBar()
+        .environment(AudioPlayer())
 }

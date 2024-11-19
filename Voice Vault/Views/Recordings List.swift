@@ -3,20 +3,32 @@ import SwiftData
 import AVFoundation
 
 struct RecordingsList: View {
+    @State private var audioPlayer = AudioPlayer()
+    @State private var audioRecorder = AudioRecorder()
+    
     @Environment(\.modelContext) private var modelContext
     @Query(animation: .default) private var recordings: [Recording]
-    @ObservedObject var audioPlayer: AudioPlayer
     
     var body: some View {
         List {
             ForEach(recordings) { recording in
-                RecordingRow(audioPlayer: audioPlayer, recording: recording)
+                RecordingRow(recording)
             }
             .onDelete(perform: delete)
         }
+        .navigationTitle("Voice Vault")
+        .safeAreaInset(edge: .bottom) {
+            VStack {
+                PlayerBar()
+                RecorderBar()
+            }
+            .background(.thinMaterial)
+        }
+        .environment(audioPlayer)
+        .environment(audioRecorder)
     }
     
-    func delete(at offsets: IndexSet) {
+    private func delete(at offsets: IndexSet) {
         withAnimation {
             offsets.map {
                 recordings[$0]
@@ -27,5 +39,6 @@ struct RecordingsList: View {
 }
 
 #Preview {
-    RecordingsList(audioPlayer: AudioPlayer())
+    RecordingsList()
+    
 }

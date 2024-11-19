@@ -1,11 +1,11 @@
 import ScrechKit
 import AVFoundation
 
-final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
-    @Published var currentlyPlaying: Recording?
-    @Published var isPlaying = false
-    
+@Observable
+final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     var audioPlayer: AVAudioPlayer?
+    var currentlyPlaying: Recording?
+    var isPlaying = false
     
     func startPlayback(_ recording: Recording) {
         let recordingData = recording.recordingData

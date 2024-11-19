@@ -9,18 +9,17 @@
 /* Begin PBXBuildFile section */
 		F32B05442CECA2E800D321BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32B053C2CECA2E800D321BD /* Assets.xcassets */; };
 		F32B05462CECA2E800D321BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B053D2CECA2E800D321BD /* ContentView.swift */; };
-		F32B05472CECA2E800D321BD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B053F2CECA2E800D321BD /* Item.swift */; };
 		F32B05482CECA2E800D321BD /* Voice Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05412CECA2E800D321BD /* Voice Vault.swift */; };
 		F32B05532CECA2FD00D321BD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05512CECA2FD00D321BD /* Extensions.swift */; };
 		F32B05542CECA2FD00D321BD /* Recordings List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054D2CECA2FD00D321BD /* Recordings List.swift */; };
 		F32B05552CECA2FD00D321BD /* Player Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054E2CECA2FD00D321BD /* Player Bar.swift */; };
 		F32B05562CECA2FD00D321BD /* Audio Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054A2CECA2FD00D321BD /* Audio Player.swift */; };
 		F32B05572CECA2FD00D321BD /* Audio Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05492CECA2FD00D321BD /* Audio Recorder.swift */; };
-		F32B05582CECA2FD00D321BD /* Content View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054C2CECA2FD00D321BD /* Content View.swift */; };
 		F32B05592CECA2FD00D321BD /* Recorder Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054F2CECA2FD00D321BD /* Recorder Bar.swift */; };
 		F32B055C2CECA31100D321BD /* Recording Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B055B2CECA31100D321BD /* Recording Model.swift */; };
 		F32B05602CECA67500D321BD /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F32B055F2CECA67500D321BD /* ScrechKit */; };
 		F32B05622CECA83200D321BD /* Recording Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05612CECA83200D321BD /* Recording Row.swift */; };
+		F32B05642CECA9AF00D321BD /* App Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05632CECA9AF00D321BD /* App Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,18 +27,17 @@
 		F32B053C2CECA2E800D321BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F32B053D2CECA2E800D321BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F32B053E2CECA2E800D321BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F32B053F2CECA2E800D321BD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F32B05402CECA2E800D321BD /* Voice_Vault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Voice_Vault.entitlements; sourceTree = "<group>"; };
 		F32B05412CECA2E800D321BD /* Voice Vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Vault.swift"; sourceTree = "<group>"; };
 		F32B05492CECA2FD00D321BD /* Audio Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Recorder.swift"; sourceTree = "<group>"; };
 		F32B054A2CECA2FD00D321BD /* Audio Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Player.swift"; sourceTree = "<group>"; };
-		F32B054C2CECA2FD00D321BD /* Content View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Content View.swift"; sourceTree = "<group>"; };
 		F32B054D2CECA2FD00D321BD /* Recordings List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recordings List.swift"; sourceTree = "<group>"; };
 		F32B054E2CECA2FD00D321BD /* Player Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player Bar.swift"; sourceTree = "<group>"; };
 		F32B054F2CECA2FD00D321BD /* Recorder Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recorder Bar.swift"; sourceTree = "<group>"; };
 		F32B05512CECA2FD00D321BD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F32B055B2CECA31100D321BD /* Recording Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording Model.swift"; sourceTree = "<group>"; };
 		F32B05612CECA83200D321BD /* Recording Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording Row.swift"; sourceTree = "<group>"; };
+		F32B05632CECA9AF00D321BD /* App Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Container.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +72,11 @@
 			isa = PBXGroup;
 			children = (
 				F32B05412CECA2E800D321BD /* Voice Vault.swift */,
+				F32B05632CECA9AF00D321BD /* App Container.swift */,
 				F32B053C2CECA2E800D321BD /* Assets.xcassets */,
 				F32B053E2CECA2E800D321BD /* Info.plist */,
 				F32B05402CECA2E800D321BD /* Voice_Vault.entitlements */,
 				F32B053D2CECA2E800D321BD /* ContentView.swift */,
-				F32B053F2CECA2E800D321BD /* Item.swift */,
 				F32B055B2CECA31100D321BD /* Recording Model.swift */,
 				F32B054B2CECA2FD00D321BD /* Audio Manager */,
 				F32B05502CECA2FD00D321BD /* Views */,
@@ -99,7 +97,6 @@
 		F32B05502CECA2FD00D321BD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F32B054C2CECA2FD00D321BD /* Content View.swift */,
 				F32B054D2CECA2FD00D321BD /* Recordings List.swift */,
 				F32B05612CECA83200D321BD /* Recording Row.swift */,
 				F32B054E2CECA2FD00D321BD /* Player Bar.swift */,
@@ -195,13 +192,12 @@
 				F32B055C2CECA31100D321BD /* Recording Model.swift in Sources */,
 				F32B05462CECA2E800D321BD /* ContentView.swift in Sources */,
 				F32B05622CECA83200D321BD /* Recording Row.swift in Sources */,
-				F32B05472CECA2E800D321BD /* Item.swift in Sources */,
 				F32B05532CECA2FD00D321BD /* Extensions.swift in Sources */,
 				F32B05542CECA2FD00D321BD /* Recordings List.swift in Sources */,
+				F32B05642CECA9AF00D321BD /* App Container.swift in Sources */,
 				F32B05552CECA2FD00D321BD /* Player Bar.swift in Sources */,
 				F32B05562CECA2FD00D321BD /* Audio Player.swift in Sources */,
 				F32B05572CECA2FD00D321BD /* Audio Recorder.swift in Sources */,
-				F32B05582CECA2FD00D321BD /* Content View.swift in Sources */,
 				F32B05592CECA2FD00D321BD /* Recorder Bar.swift in Sources */,
 				F32B05482CECA2E800D321BD /* Voice Vault.swift in Sources */,
 			);

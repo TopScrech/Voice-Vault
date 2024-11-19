@@ -2,8 +2,13 @@ import SwiftUI
 import AVFoundation
 
 struct RecordingRow: View {
-    @ObservedObject var audioPlayer: AudioPlayer
-    var recording: Recording
+    @Environment(AudioPlayer.self) private var audioPlayer
+    
+    private var recording: Recording
+    
+    init(_ recording: Recording) {
+        self.recording = recording
+    }
     
     var isPlayingThisRecording: Bool {
         audioPlayer.currentlyPlaying?.id == recording.id

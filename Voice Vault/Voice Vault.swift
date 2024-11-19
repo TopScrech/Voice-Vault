@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct Voice_VaultApp: App {
+struct VoiceVault: App {
     private let container: ModelContainer
     
     init() {
@@ -19,7 +19,7 @@ struct Voice_VaultApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppContainer()
         }
         .modelContainer(container)
     }
