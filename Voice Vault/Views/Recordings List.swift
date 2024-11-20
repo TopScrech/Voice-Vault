@@ -17,6 +17,11 @@ struct RecordingsList: View {
             }
             .onDelete(perform: delete)
         }
+        .overlay {
+            if recordings.isEmpty {
+                ContentUnavailableView("You don't have any recordings yet", systemImage: "microphone.badge.plus", description: Text("Start recording right now!"))
+            }
+        }
         .navigationTitle("Voice Vault")
         .toolbar {
             SFButton("gear") {

@@ -15,6 +15,10 @@ struct RecordingRow: View {
         audioPlayer.currentlyPlaying?.id == rec.id
     }
     
+    private var duration: String {
+        getDuration(rec.recordingData)
+    }
+    
     @State private var alertRename = false
     
     var body: some View {
@@ -29,9 +33,7 @@ struct RecordingRow: View {
                         .bold(isPlaying)
                     
                     HStack(spacing: 5) {
-                        if let recordingData = rec.recordingData, let duration = getDuration(recordingData) {
-                            Text(DateComponentsFormatter.positional.string(from: duration) ?? "0:00")
-                        }
+                        Text(duration)
                         
                         if let codec = rec.codec {
                             Text(codec)
@@ -75,12 +77,17 @@ struct RecordingRow: View {
         }
     }
     
-    private func getDuration(_ recordingData: Data) -> TimeInterval? {
+    private func getDuration(_ recordingData: Data?) -> String {
+        guard let recordingData else {
+            return "0:00"
+        }
+        
         do {
-            return try AVAudioPlayer(data: recordingData).duration
+            let duration = try AVAudioPlayer(data: recordingData).duration
+            return DateComponentsFormatter.positional.string(from: duration) ?? "0:00"
         } catch {
-            print("Failed to get the duration for recording on the list: Recording Name - \(rec.name)")
-            return nil
+            print("Failed to get duration for recording '\(rec.name)'")
+            return "0:00"
         }
     }
 }
