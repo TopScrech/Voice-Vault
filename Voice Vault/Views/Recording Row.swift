@@ -20,6 +20,7 @@ struct RecordingRow: View {
     }
     
     @State private var alertRename = false
+    @State private var sheetShare = false
     
     var body: some View {
         @Bindable var rec = rec
@@ -55,17 +56,23 @@ struct RecordingRow: View {
         .alert("Rename", isPresented: $alertRename) {
             TextField("New Name", text: $rec.name)
         }
+        .sheet($sheetShare) {
+            NavigationView {
+                SheetShare(rec.recordingData)
+            }
+            .presentationDetents([.medium])
+        }
         .contextMenu {
-#warning("Implement sharing")
-            
-            //            if let data = rec.recordingData, let url = try? AVAudioPlayer(data: data).url {
-            //                ShareLink(item: url)
-            //            }
-            
             Button {
                 alertRename = true
             } label: {
                 Label("Rename", systemImage: "pencil")
+            }
+            
+            Button {
+                sheetShare = true
+            } label: {
+                Label("Share", systemImage: "square.and.arrow.up")
             }
             
             Divider()
