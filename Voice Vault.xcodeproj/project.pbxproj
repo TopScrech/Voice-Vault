@@ -28,7 +28,7 @@
 		F32B05242CECA2DE00D321BD /* Voice Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32B053C2CECA2E800D321BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F32B053E2CECA2E800D321BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F32B05402CECA2E800D321BD /* Voice_Vault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Voice_Vault.entitlements; sourceTree = "<group>"; };
+		F32B05402CECA2E800D321BD /* Voice Vault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Voice Vault.entitlements"; sourceTree = "<group>"; };
 		F32B05412CECA2E800D321BD /* Voice Vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Vault.swift"; sourceTree = "<group>"; };
 		F32B05492CECA2FD00D321BD /* Audio Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Recorder.swift"; sourceTree = "<group>"; };
 		F32B054A2CECA2FD00D321BD /* Audio Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Player.swift"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 				F3D036F82CECAF3C00C4E1AC /* Nav */,
 				F32B053C2CECA2E800D321BD /* Assets.xcassets */,
 				F32B053E2CECA2E800D321BD /* Info.plist */,
-				F32B05402CECA2E800D321BD /* Voice_Vault.entitlements */,
+				F32B05402CECA2E800D321BD /* Voice Vault.entitlements */,
 				F32B055B2CECA31100D321BD /* Recording Model.swift */,
 				F32B054B2CECA2FD00D321BD /* Audio Manager */,
 				F32B05502CECA2FD00D321BD /* Views */,
@@ -235,7 +235,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice_Vault.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice Vault.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8FQUA2F388;
@@ -268,7 +268,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice_Vault.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice Vault.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 8FQUA2F388;
