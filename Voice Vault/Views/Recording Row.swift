@@ -28,7 +28,7 @@ struct RecordingRow: View {
                     Text(rec.name)
                         .bold(isPlaying)
                     
-                    HStack {
+                    HStack(spacing: 5) {
                         if let recordingData = rec.recordingData, let duration = getDuration(recordingData) {
                             Text(DateComponentsFormatter.positional.string(from: duration) ?? "0:00")
                         }
@@ -38,7 +38,7 @@ struct RecordingRow: View {
                         }
                         
                         if let bitrate = rec.bitrate {
-                            Text("\(bitrate) kHz")
+                            Text("\(bitrate / 1000) kHz")
                         }
                     }
                     .caption2()
