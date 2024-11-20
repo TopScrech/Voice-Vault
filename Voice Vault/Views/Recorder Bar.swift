@@ -14,9 +14,9 @@ struct RecorderBar: View {
     
     var body: some View {
         VStack {
+            // Duration
             if let audioRecorder = audioRecorder.audioRecorder, audioRecorder.isRecording {
                 TimelineView(.periodic(from: .now, by: 1)) { _ in
-                    // Duration
                     Text(DateComponentsFormatter.positional.string(from: audioRecorder.currentTime) ?? "0:00")
                         .title3()
                         .semibold()
