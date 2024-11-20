@@ -56,6 +56,11 @@ struct RecordingRow: View {
         .alert("Rename", isPresented: $alertRename) {
             TextField("New Name", text: $rec.name)
         }
+        .onDrag {
+            let url = dataToFile(rec.recordingData)
+            
+            return NSItemProvider(contentsOf: url)!
+        }
         .sheet($sheetShare) {
             NavigationView {
                 SheetShare(rec.recordingData)

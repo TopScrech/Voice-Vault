@@ -30,29 +30,11 @@ struct SheetShare: View {
             }
         }
         .task {
-            dataToFile(data)
-        }
-    }
-    
-    private func dataToFile(_ recordingData: Data?) {
-        guard let recordingData else {
-            return
-        }
-        
-        let tempDirectory = FileManager.default.temporaryDirectory
-        let tempFileURL = tempDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("m4a")
-        
-        do {
-            try recordingData.write(to: tempFileURL)
-            
             withAnimation {
-                url = tempFileURL
+                url = dataToFile(data)
             }
-        } catch {
-            print("Failed to create temporary file: \(error.localizedDescription)")
-            return
         }
-    }
+    }    
 }
 
 //#Preview {
