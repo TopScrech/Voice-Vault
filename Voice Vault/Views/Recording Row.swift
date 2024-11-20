@@ -33,8 +33,6 @@ struct RecordingRow: View {
                         .bold(isPlaying)
                     
                     HStack(spacing: 5) {
-                        Text(duration)
-                        
                         if let codec = rec.codec {
                             Text(codec)
                         }
@@ -48,6 +46,9 @@ struct RecordingRow: View {
                 }
                 
                 Spacer()
+                
+                Text(duration)
+                    .secondary()
             }
         }
         .foregroundStyle(.foreground)
