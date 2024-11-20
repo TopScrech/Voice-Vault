@@ -25,7 +25,7 @@ struct RecordingsList: View {
             .disabled(audioRecorder.isRecording)
         }
         .sheet($sheetSettings) {
-            SettingsView()
+            SettingsParent()
         }
         .safeAreaInset(edge: .bottom) {
             VStack {

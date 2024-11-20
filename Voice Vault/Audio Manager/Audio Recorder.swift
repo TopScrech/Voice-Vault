@@ -58,7 +58,7 @@ final class AudioRecorder {
         
         let storage = ValueStorage()
         let codec = storage.selectedCodec.rawValue
-        let bitrate = storage.bitrate * 1000
+        let bitrate = storage.bitrate
         
         let settings = [
             AVFormatIDKey: codec,

@@ -12,39 +12,35 @@ struct SettingsView: View {
     @State private var confirmDelete = false
     
     var body: some View {
-        NavigationView {
-            List {
-                Picker("Codec", selection: $storage.selectedCodec) {
-                    ForEach(Codec.allCases, id: \.rawValue) { codec in
-                        Text(codec.name)
-                            .tag(codec)
-                    }
-                }
-                .pickerStyle(.navigationLink)
-                .scrollIndicators(.never)
-                
-                Picker("Bitrate", selection: $storage.bitrate) {
-                    ForEach(bitrates, id: \.self) { bitrate in
-                        Text("\(bitrate) kHz")
-                            .tag(bitrate * 1000)
-                    }
-                }
-                
-                Section {
-                    Button("Delete all recordings", role: .destructive) {
-                        confirmDelete = true
-                    }
-                    .disabled(recordings.isEmpty)
-                } footer: {
-                    if recordings.isEmpty {
-                        Text("You don't have any recordings yet")
-                    }
+        List {
+            Picker("Codec", selection: $storage.selectedCodec) {
+                ForEach(Codec.allCases, id: \.rawValue) { codec in
+                    Text(codec.name)
+                        .tag(codec)
                 }
             }
-            .navigationTitle("Settings")
+            .pickerStyle(.navigationLink)
+            .scrollIndicators(.never)
+            
+            Picker("Bitrate", selection: $storage.bitrate) {
+                ForEach(bitrates, id: \.self) { bitrate in
+                    Text("\(bitrate) kHz")
+                        .tag(bitrate * 1000)
+                }
+            }
+            
+            Section {
+                Button("Delete all recordings", role: .destructive) {
+                    confirmDelete = true
+                }
+                .disabled(recordings.isEmpty)
+            } footer: {
+                if recordings.isEmpty {
+                    Text("You don't have any recordings yet")
+                }
+            }
         }
-        .presentationDetents([.medium, .large])
-        .presentationDragIndicator(.hidden)
+        .navigationTitle("Settings")
         .confirmationDialog("Delete all recordings", isPresented: $confirmDelete) {
             Button("Yes, delete all recordings", role: .destructive) {
                 deleteAll()
