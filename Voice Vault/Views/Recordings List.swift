@@ -16,9 +16,8 @@ struct RecordingsList: View {
                 RecordingRow(recording)
             }
             .onDelete(perform: delete)
-        }
-        .overlay {
-            if recordings.isEmpty {
+            
+            if recordings.isEmpty && !audioRecorder.isRecording {
                 ContentUnavailableView("You don't have any recordings yet", systemImage: "microphone.badge.plus", description: Text("Start recording right now!"))
             }
         }
