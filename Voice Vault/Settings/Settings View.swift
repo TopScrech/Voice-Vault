@@ -7,16 +7,9 @@ struct SettingsView: View {
     
     @Query private var recordings: [Recording]
     
-    private let bitrates = [
-        1,
-        6,
-        8,
-        10,
-        12,
-        48,
-        96,
-        196
-    ]
+    private let bitrates = [1, 6, 8, 10, 12, 48, 96, 196]
+    
+    @State private var confirmDelete = false
     
     var body: some View {
         NavigationView {
@@ -39,14 +32,24 @@ struct SettingsView: View {
                 
                 Section {
                     Button("Delete all recordings", role: .destructive) {
-                        deleteAll()
+                        confirmDelete = true
                     }
+                    .disabled(recordings.isEmpty)
+                } footer: {
+                    Text("You don't have any recordings yet")
                 }
             }
             .navigationTitle("Settings")
         }
         .presentationDetents([.medium, .large])
         .presentationDragIndicator(.hidden)
+        .confirmationDialog("Delete all recordings", isPresented: $confirmDelete) {
+            Button("Yes, delete all recordings", role: .destructive) {
+                deleteAll()
+            }
+        } message: {
+            Text("Are you sure you want to delete all recordings?")
+        }
     }
     
     private func deleteAll() {
