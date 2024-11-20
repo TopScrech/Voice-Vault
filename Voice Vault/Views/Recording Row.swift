@@ -21,6 +21,7 @@ struct RecordingRow: View {
     
     @State private var alertRename = false
     @State private var sheetShare = false
+    @State private var localUrl: URL? = nil
     
     var body: some View {
         @Bindable var rec = rec
@@ -58,12 +59,15 @@ struct RecordingRow: View {
         }
         .onDrag {
             let url = dataToFile(rec.recordingData)
-#warning("Pass to share sheet")
+            localUrl = url
+            
             return NSItemProvider(contentsOf: url)!
         }
         .sheet($sheetShare) {
             NavigationView {
-                SheetShare(rec.recordingData)
+                if let localUrl {
+                    SheetShare(localUrl)
+                }
             }
             .presentationDetents([.medium])
         }
