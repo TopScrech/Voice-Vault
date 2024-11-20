@@ -22,8 +22,8 @@ struct VoiceVault: App {
     var body: some Scene {
         WindowGroup {
             AppContainer()
-                .environmentObject(storage)
         }
+        .environmentObject(storage)
         .modelContainer(container)
     }
 }
