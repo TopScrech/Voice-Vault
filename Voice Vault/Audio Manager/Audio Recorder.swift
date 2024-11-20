@@ -104,7 +104,7 @@ final class AudioRecorder {
         let storage = ValueStorage()
         let codec = storage.selectedCodec.name
         let bitrate = storage.bitrate
-
+        
         let newRecording = Recording(
             createdAt: currentDateTime,
             name: recordingName,
@@ -114,7 +114,6 @@ final class AudioRecorder {
         )
         
         modelContext.insert(newRecording)
-        try! modelContext.save()
         
         deleteRecordingFile()
     }

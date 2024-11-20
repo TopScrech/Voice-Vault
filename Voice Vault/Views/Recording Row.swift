@@ -69,7 +69,6 @@ struct RecordingRow: View {
             
             Button(role: .destructive) {
                 modelContext.delete(rec)
-                try! modelContext.save()
             } label: {
                 Label("Delete", systemImage: "trash")
             }

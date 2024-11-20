@@ -53,8 +53,6 @@ struct SettingsView: View {
         for rec in recordings {
             modelContext.delete(rec)
         }
-        
-        try! modelContext.save()
     }
 }
 
