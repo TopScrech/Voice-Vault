@@ -1,7 +1,7 @@
 import Foundation
 
 func dataToFile(_ recordingData: Data?) -> URL? {
-    print("Goida")
+    print(#function)
     
     guard let recordingData else {
         return nil

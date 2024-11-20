@@ -58,7 +58,7 @@ struct RecordingRow: View {
         }
         .onDrag {
             let url = dataToFile(rec.recordingData)
-            
+#warning("Pass to share sheet")
             return NSItemProvider(contentsOf: url)!
         }
         .sheet($sheetShare) {

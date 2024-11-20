@@ -22,14 +22,14 @@ struct RecordingsList: View {
             }
         }
         .navigationTitle("Voice Vault")
+        .sheet($sheetSettings) {
+            SettingsParent()
+        }
         .toolbar {
             SFButton("gear") {
                 sheetSettings = true
             }
             .disabled(audioRecorder.isRecording)
-        }
-        .sheet($sheetSettings) {
-            SettingsParent()
         }
         .safeAreaInset(edge: .bottom) {
             VStack {

@@ -100,7 +100,7 @@ final class AudioRecorder {
     }
     
     // MARK: - SwiftData Integration
-    private func saveNewRecording(_ modelContext: ModelContext, _ recordingData: Data) {
+    func saveNewRecording(_ modelContext: ModelContext, _ recordingData: Data) {
         let storage = ValueStorage()
         let codec = storage.selectedCodec.name
         let bitrate = storage.bitrate
