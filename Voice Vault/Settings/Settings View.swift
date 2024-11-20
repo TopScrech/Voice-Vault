@@ -26,7 +26,7 @@ struct SettingsView: View {
                 Picker("Bitrate", selection: $storage.bitrate) {
                     ForEach(bitrates, id: \.self) { bitrate in
                         Text("\(bitrate) kHz")
-                            .tag(bitrate)
+                            .tag(bitrate * 1000)
                     }
                 }
                 
@@ -36,7 +36,9 @@ struct SettingsView: View {
                     }
                     .disabled(recordings.isEmpty)
                 } footer: {
-                    Text("You don't have any recordings yet")
+                    if recordings.isEmpty {
+                        Text("You don't have any recordings yet")
+                    }
                 }
             }
             .navigationTitle("Settings")
