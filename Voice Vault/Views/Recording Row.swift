@@ -65,9 +65,7 @@ struct RecordingRow: View {
         }
         .sheet($sheetShare) {
             NavigationView {
-                if let localUrl {
-                    SheetShare(localUrl)
-                }
+                SheetShare(localUrl)
             }
             .presentationDetents([.medium])
         }
