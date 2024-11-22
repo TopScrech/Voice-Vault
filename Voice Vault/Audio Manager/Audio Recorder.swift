@@ -39,7 +39,7 @@ final class AudioRecorder {
     }
     
     // MARK: - Start Recording
-    func startRecording() {
+    func startRecording(codec: Codec, bitrate: Int) {
         let recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -55,13 +55,9 @@ final class AudioRecorder {
         let tempDirectory = FileManager.default.temporaryDirectory
         let recordingFileURL = tempDirectory.appendingPathComponent(recordingName).appendingPathExtension("m4a")
         recordingURL = recordingFileURL
-        
-        let storage = ValueStorage()
-        let codec = storage.selectedCodec.rawValue
-        let bitrate = storage.bitrate
-        
+                
         let settings = [
-            AVFormatIDKey: codec,
+            AVFormatIDKey: codec.rawValue,
             AVSampleRateKey: bitrate,
             AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
@@ -102,7 +98,7 @@ final class AudioRecorder {
     // MARK: - SwiftData Integration
     func saveNewRecording(_ modelContext: ModelContext, _ recordingData: Data) {
         let storage = ValueStorage()
-        let codec = storage.selectedCodec.name
+        let codec = storage.selectedCodec
         let bitrate = storage.bitrate
         
         let newRecording = Recording(

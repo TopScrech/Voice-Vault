@@ -3,12 +3,12 @@ import SwiftData
 
 @Model
 final class Recording {
-    var id = UUID()
+//    var id = UUID()
     
     var name = ""
     var createdAt: Date?
     var bitrate: Int?
-    var codec: String?
+    var codec: Codec?
     
     @Attribute(.allowsCloudEncryption)
     var recordingData: Data?
@@ -18,7 +18,7 @@ final class Recording {
         name: String,
         recordingData: Data,
         bitrate: Int,
-        codec: String
+        codec: Codec
     ) {
         self.createdAt = createdAt
         self.name = name

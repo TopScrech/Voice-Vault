@@ -4,6 +4,7 @@ import SwiftData
 struct RecordingsList: View {
     @State private var audioPlayer = AudioPlayer()
     @State private var audioRecorder = AudioRecorder()
+    @StateObject private var storage = ValueStorage()
     
     @Environment(\.modelContext) private var modelContext
     @Query(animation: .default) private var recordings: [Recording]
@@ -38,6 +39,7 @@ struct RecordingsList: View {
             }
             .background(.thinMaterial)
         }
+        .environmentObject(storage)
         .environment(audioPlayer)
         .environment(audioRecorder)
     }

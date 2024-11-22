@@ -10,6 +10,7 @@ struct SettingsView: View {
     private let bitrates = [1, 6, 8, 10, 12, 48, 96, 196]
     
     @State private var confirmDelete = false
+
     
     var body: some View {
         List {
@@ -58,6 +59,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsParent()
         .environmentObject(ValueStorage())
 }

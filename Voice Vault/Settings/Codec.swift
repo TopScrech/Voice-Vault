@@ -1,11 +1,10 @@
 import AVFoundation
 
-enum Codec: Int {
+enum Codec: Int, Codable {
     case appleLossless,
          ima4,
          aac,
          flac,
-         mp3,
          ac3,
          enhancedAC3,
          opus,
@@ -27,12 +26,13 @@ enum Codec: Int {
          hvxc,
          twinVQ
     
+    var id: Int { rawValue }
+
     static var allCases: [Codec] = [
         .appleLossless,
         .ima4,
         .aac,
         .flac,
-        .mp3,
         .ac3,
         .enhancedAC3,
         .opus,
@@ -61,7 +61,6 @@ enum Codec: Int {
         case .ima4: Int(kAudioFormatAppleIMA4)
         case .aac: Int(kAudioFormatMPEG4AAC)
         case .flac: Int(kAudioFormatFLAC)
-        case .mp3: Int(kAudioFormatMPEGLayer3)
         case .ac3: Int(kAudioFormatAC3)
         case .enhancedAC3: Int(kAudioFormatEnhancedAC3)
         case .opus: Int(kAudioFormatOpus)
@@ -91,7 +90,6 @@ enum Codec: Int {
         case .ima4: "Apple IMA4"
         case .aac: "MPEG4 AAC"
         case .flac: "FLAC"
-        case .mp3: "MPEG Layer 3"
         case .ac3: "AC3"
         case .enhancedAC3: "Enhanced AC3"
         case .opus: "Opus"

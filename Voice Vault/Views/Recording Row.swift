@@ -36,7 +36,7 @@ struct RecordingRow: View {
                     
                     HStack(spacing: 5) {
                         if let codec = rec.codec {
-                            Text(codec)
+                            Text(codec.name)
                         }
                         
                         if let bitrate = rec.bitrate {

@@ -4,6 +4,7 @@ struct RecorderBar: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AudioRecorder.self) private var audioRecorder
     @Environment(AudioPlayer.self) private var audioPlayer
+    @EnvironmentObject private var storage: ValueStorage
     
     @State private var buttonSize = 1.0
     
@@ -66,11 +67,11 @@ struct RecorderBar: View {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 // Start
-                audioRecorder.startRecording()
+                audioRecorder.startRecording(codec: storage.selectedCodec, bitrate: storage.bitrate)
             }
         } else {
             // Start
-            audioRecorder.startRecording()
+            audioRecorder.startRecording(codec: storage.selectedCodec, bitrate: storage.bitrate)
         }
     }
     
