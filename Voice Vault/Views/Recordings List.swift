@@ -54,5 +54,4 @@ struct RecordingsList: View {
 
 #Preview {
     RecordingsList()
-    
 }
