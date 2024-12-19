@@ -85,9 +85,9 @@
 			children = (
 				F32B05412CECA2E800D321BD /* Voice Vault.swift */,
 				F3D036F82CECAF3C00C4E1AC /* Nav */,
-				F32B053C2CECA2E800D321BD /* Assets.xcassets */,
 				F32B053E2CECA2E800D321BD /* Info.plist */,
 				F32B05402CECA2E800D321BD /* Voice Vault.entitlements */,
+				F32B053C2CECA2E800D321BD /* Assets.xcassets */,
 				F32BDDC42CEF67E000D113D5 /* PrivacyInfo.xcprivacy */,
 				F32B055B2CECA31100D321BD /* Recording Model.swift */,
 				F32B054B2CECA2FD00D321BD /* Audio Manager */,

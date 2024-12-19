@@ -19,7 +19,11 @@ struct RecordingsList: View {
             .onDelete(perform: delete)
             
             if recordings.isEmpty && !audioRecorder.isRecording {
-                ContentUnavailableView("You don't have any recordings yet", systemImage: "microphone.badge.plus", description: Text("Start recording right now!"))
+                ContentUnavailableView(
+                    "You don't have any recordings yet",
+                    systemImage: "microphone.badge.plus",
+                    description: Text("Start recording right now!")
+                )
             }
         }
         .navigationTitle("Voice Vault")
@@ -35,6 +39,7 @@ struct RecordingsList: View {
         .safeAreaInset(edge: .bottom) {
             VStack {
                 PlayerBar()
+                
                 RecorderBar()
             }
             .background(.thinMaterial)

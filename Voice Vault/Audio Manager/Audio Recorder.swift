@@ -40,6 +40,7 @@ final class AudioRecorder {
     
     // MARK: - Start Recording
     func startRecording(codec: Codec, bitrate: Int) {
+        let format = "dd-MM-YY 'at' HH:mm:ss"
         let recordingSession = AVAudioSession.sharedInstance()
         
         do {
@@ -50,10 +51,14 @@ final class AudioRecorder {
         }
         
         recordingDate = currentDateTime
-        recordingName = "\(currentDateTime.toString(dateFormat: "dd-MM-YY 'at' HH:mm:ss"))"
+        recordingName = currentDateTime.toString(dateFormat: format)
         
-        let tempDirectory = FileManager.default.temporaryDirectory
-        let recordingFileURL = tempDirectory.appendingPathComponent(recordingName).appendingPathExtension("m4a")
+        let tempDir = FileManager.default.temporaryDirectory
+        
+        let recordingFileURL = tempDir
+            .appendingPathComponent(recordingName)
+            .appendingPathExtension("m4a")
+        
         recordingURL = recordingFileURL
                 
         let settings = [

@@ -59,6 +59,7 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
         if audioPlayer != nil {
             audioPlayer?.stop()
             isPlaying = false
+            
             print("Play Recording - Stopped")
             
             withAnimation(.spring) {

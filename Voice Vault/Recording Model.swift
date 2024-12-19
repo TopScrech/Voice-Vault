@@ -3,7 +3,7 @@ import SwiftData
 
 @Model
 final class Recording {
-//    var id = UUID()
+    //    var id = UUID()
     
     var name = ""
     var createdAt: Date?
