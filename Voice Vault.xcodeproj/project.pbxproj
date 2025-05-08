@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,11 +55,9 @@
 /* Begin PBXFrameworksBuildPhase section */
 		F32B05212CECA2DE00D321BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F32B05602CECA67500D321BD /* ScrechKit in Frameworks */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -160,8 +158,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = "Voice Vault";
 			packageProductDependencies = (
 				F32B055F2CECA67500D321BD /* ScrechKit */,
@@ -178,7 +174,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					F32B05232CECA2DE00D321BD = {
 						CreatedOnToolsVersion = 16.2;
@@ -197,7 +193,7 @@
 			packageReferences = (
 				F32B055E2CECA67500D321BD /* XCRemoteSwiftPackageReference "ScrechKit" */,
 			);
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = F32B05252CECA2DE00D321BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -210,19 +206,16 @@
 /* Begin PBXResourcesBuildPhase section */
 		F32B05222CECA2DE00D321BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F32BDDC52CEF67E000D113D5 /* PrivacyInfo.xcprivacy in Resources */,
 				F32B05442CECA2E800D321BD /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F32B05202CECA2DE00D321BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				F32B055C2CECA31100D321BD /* Recording Model.swift in Sources */,
 				F32B05622CECA83200D321BD /* Recording Row.swift in Sources */,
@@ -241,12 +234,11 @@
 				F32B05482CECA2E800D321BD /* Voice Vault.swift in Sources */,
 				F3D036FA2CECB6B900C4E1AC /* Settings View.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F32B05362CECA2DF00D321BD /* Debug */ = {
+		F32B05362CECA2DF00D321BD /* Debug configuration for PBXNativeTarget "Voice Vault" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -254,7 +246,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice Vault.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Voice Vault/Info.plist";
@@ -279,7 +270,7 @@
 			};
 			name = Debug;
 		};
-		F32B05372CECA2DF00D321BD /* Release */ = {
+		F32B05372CECA2DF00D321BD /* Release configuration for PBXNativeTarget "Voice Vault" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -287,7 +278,6 @@
 				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice Vault.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Voice Vault/Info.plist";
@@ -312,7 +302,7 @@
 			};
 			name = Release;
 		};
-		F32B05382CECA2DF00D321BD /* Debug */ = {
+		F32B05382CECA2DF00D321BD /* Debug configuration for PBXProject "Voice Vault" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -347,6 +337,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -375,7 +366,7 @@
 			};
 			name = Debug;
 		};
-		F32B05392CECA2DF00D321BD /* Release */ = {
+		F32B05392CECA2DF00D321BD /* Release configuration for PBXProject "Voice Vault" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -410,6 +401,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -437,19 +429,17 @@
 		F32B051F2CECA2DE00D321BD /* Build configuration list for PBXProject "Voice Vault" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F32B05382CECA2DF00D321BD /* Debug */,
-				F32B05392CECA2DF00D321BD /* Release */,
+				F32B05382CECA2DF00D321BD /* Debug configuration for PBXProject "Voice Vault" */,
+				F32B05392CECA2DF00D321BD /* Release configuration for PBXProject "Voice Vault" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		F32B05352CECA2DF00D321BD /* Build configuration list for PBXNativeTarget "Voice Vault" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F32B05362CECA2DF00D321BD /* Debug */,
-				F32B05372CECA2DF00D321BD /* Release */,
+				F32B05362CECA2DF00D321BD /* Debug configuration for PBXNativeTarget "Voice Vault" */,
+				F32B05372CECA2DF00D321BD /* Release configuration for PBXNativeTarget "Voice Vault" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
