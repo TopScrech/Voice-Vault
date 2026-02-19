@@ -6,12 +6,15 @@ struct VoiceVault: App {
     private let container: ModelContainer
     
     init() {
-        let schema = Schema([
-            Recording.self
-        ])
+        let schema = Schema([Recording.self])
         
         do {
-            container = try ModelContainer(for: schema)
+#if targetEnvironment(simulator)
+            let configuration = ModelConfiguration(schema: schema, cloudKitDatabase: .none)
+#else
+            let configuration = ModelConfiguration(schema: schema)
+#endif
+            container = try ModelContainer(for: schema, configurations: [configuration])
         } catch {
             fatalError("Failed to create model container")
         }

@@ -13,8 +13,8 @@ struct RecordingsList: View {
     
     var body: some View {
         List {
-            ForEach(recordings) { recording in
-                RecordingRow(recording)
+            ForEach(recordings) {
+                RecordingRow($0)
             }
             .onDelete(perform: delete)
             
