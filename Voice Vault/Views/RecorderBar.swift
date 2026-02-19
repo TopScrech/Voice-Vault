@@ -65,9 +65,12 @@ struct RecorderBar: View {
             // Stop any playback
             audioPlayer.stopPlayback()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                // Start
-                audioRecorder.startRecording(codec: storage.selectedCodec, bitrate: storage.bitrate)
+            Task {
+                try? await Task.sleep(for: .seconds(1))
+                await MainActor.run {
+                    // Start
+                    audioRecorder.startRecording(codec: storage.selectedCodec, bitrate: storage.bitrate)
+                }
             }
         } else {
             // Start

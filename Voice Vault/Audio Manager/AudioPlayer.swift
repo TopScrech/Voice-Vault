@@ -62,17 +62,18 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
     }
     
     func stopPlayback() {
-        if audioPlayer != nil {
-            audioPlayer?.stop()
-            isPlaying = false
-            
-            logger.info("Play Recording - Stopped")
-            
-            withAnimation(.spring) {
-                self.currentlyPlaying = nil
-            }
-        } else {
+        guard let audioPlayer else {
             logger.error("Play Recording - Failed to stop playing because a recording is not active")
+            return
+        }
+        
+        audioPlayer.stop()
+        isPlaying = false
+        
+        logger.info("Play Recording - Stopped")
+        
+        withAnimation(.spring) {
+            self.currentlyPlaying = nil
         }
     }
     
@@ -82,7 +83,9 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
         isPlaying = false
         logger.info("Play Recording - Recording finished playing")
         
-        delay(1) {
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(1))
+            
             withAnimation(.spring) {
                 self.currentlyPlaying = nil
             }

@@ -34,7 +34,7 @@ final class AudioRecorder {
             
         case .undetermined:
             AVAudioApplication.requestRecordPermission { granted in
-                main {
+                Task { @MainActor in
                     self.isPermissionGranted = granted
                 }
             }
