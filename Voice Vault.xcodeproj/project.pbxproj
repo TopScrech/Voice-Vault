@@ -7,50 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F321926B2CEDFA11000E445E /* Settings Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321926A2CEDFA11000E445E /* Settings Parent.swift */; };
-		F321926D2CEE02E7000E445E /* Sheet Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321926C2CEE02E7000E445E /* Sheet Share.swift */; };
-		F321926F2CEE076E000E445E /* Data to File.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321926E2CEE076E000E445E /* Data to File.swift */; };
-		F32B05442CECA2E800D321BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32B053C2CECA2E800D321BD /* Assets.xcassets */; };
-		F32B05482CECA2E800D321BD /* Voice Vault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05412CECA2E800D321BD /* Voice Vault.swift */; };
-		F32B05532CECA2FD00D321BD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05512CECA2FD00D321BD /* Extensions.swift */; };
-		F32B05542CECA2FD00D321BD /* Recordings List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054D2CECA2FD00D321BD /* Recordings List.swift */; };
-		F32B05552CECA2FD00D321BD /* Player Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054E2CECA2FD00D321BD /* Player Bar.swift */; };
-		F32B05562CECA2FD00D321BD /* Audio Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054A2CECA2FD00D321BD /* Audio Player.swift */; };
-		F32B05572CECA2FD00D321BD /* Audio Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05492CECA2FD00D321BD /* Audio Recorder.swift */; };
-		F32B05592CECA2FD00D321BD /* Recorder Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B054F2CECA2FD00D321BD /* Recorder Bar.swift */; };
-		F32B055C2CECA31100D321BD /* Recording Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B055B2CECA31100D321BD /* Recording Model.swift */; };
 		F32B05602CECA67500D321BD /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F32B055F2CECA67500D321BD /* ScrechKit */; };
-		F32B05622CECA83200D321BD /* Recording Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05612CECA83200D321BD /* Recording Row.swift */; };
-		F32B05642CECA9AF00D321BD /* App Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B05632CECA9AF00D321BD /* App Container.swift */; };
-		F32BDDC52CEF67E000D113D5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F32BDDC42CEF67E000D113D5 /* PrivacyInfo.xcprivacy */; };
-		F3D036FA2CECB6B900C4E1AC /* Settings View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D036F92CECB6B900C4E1AC /* Settings View.swift */; };
-		F3D036FD2CECB79200C4E1AC /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D036FC2CECB79200C4E1AC /* Codec.swift */; };
-		F3D036FF2CECD01E00C4E1AC /* Value Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D036FE2CECD01E00C4E1AC /* Value Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F321926A2CEDFA11000E445E /* Settings Parent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings Parent.swift"; sourceTree = "<group>"; };
-		F321926C2CEE02E7000E445E /* Sheet Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sheet Share.swift"; sourceTree = "<group>"; };
-		F321926E2CEE076E000E445E /* Data to File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data to File.swift"; sourceTree = "<group>"; };
 		F32B05242CECA2DE00D321BD /* Voice Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F32B053C2CECA2E800D321BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F32B053E2CECA2E800D321BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F32B05402CECA2E800D321BD /* Voice Vault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Voice Vault.entitlements"; sourceTree = "<group>"; };
-		F32B05412CECA2E800D321BD /* Voice Vault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Vault.swift"; sourceTree = "<group>"; };
-		F32B05492CECA2FD00D321BD /* Audio Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Recorder.swift"; sourceTree = "<group>"; };
-		F32B054A2CECA2FD00D321BD /* Audio Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Player.swift"; sourceTree = "<group>"; };
-		F32B054D2CECA2FD00D321BD /* Recordings List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recordings List.swift"; sourceTree = "<group>"; };
-		F32B054E2CECA2FD00D321BD /* Player Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player Bar.swift"; sourceTree = "<group>"; };
-		F32B054F2CECA2FD00D321BD /* Recorder Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recorder Bar.swift"; sourceTree = "<group>"; };
-		F32B05512CECA2FD00D321BD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F32B055B2CECA31100D321BD /* Recording Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording Model.swift"; sourceTree = "<group>"; };
-		F32B05612CECA83200D321BD /* Recording Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recording Row.swift"; sourceTree = "<group>"; };
-		F32B05632CECA9AF00D321BD /* App Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Container.swift"; sourceTree = "<group>"; };
-		F32BDDC42CEF67E000D113D5 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		F3D036F92CECB6B900C4E1AC /* Settings View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings View.swift"; sourceTree = "<group>"; };
-		F3D036FC2CECB79200C4E1AC /* Codec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codec.swift; sourceTree = "<group>"; };
-		F3D036FE2CECD01E00C4E1AC /* Value Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Storage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F3B7CE372F468C90004EB812 /* Exceptions for "Voice Vault" folder in "Voice Vault" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F32B05232CECA2DE00D321BD /* Voice Vault */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F3B7CE232F468C90004EB812 /* Voice Vault */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F3B7CE372F468C90004EB812 /* Exceptions for "Voice Vault" folder in "Voice Vault" target */,
+			);
+			path = "Voice Vault";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F32B05212CECA2DE00D321BD /* Frameworks */ = {
@@ -65,7 +48,7 @@
 		F32B051B2CECA2DE00D321BD = {
 			isa = PBXGroup;
 			children = (
-				F32B05422CECA2E800D321BD /* Voice Vault */,
+				F3B7CE232F468C90004EB812 /* Voice Vault */,
 				F32B05252CECA2DE00D321BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,73 +59,6 @@
 				F32B05242CECA2DE00D321BD /* Voice Vault.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		F32B05422CECA2E800D321BD /* Voice Vault */ = {
-			isa = PBXGroup;
-			children = (
-				F32B05412CECA2E800D321BD /* Voice Vault.swift */,
-				F3D036F82CECAF3C00C4E1AC /* Nav */,
-				F32B053E2CECA2E800D321BD /* Info.plist */,
-				F32B05402CECA2E800D321BD /* Voice Vault.entitlements */,
-				F32B053C2CECA2E800D321BD /* Assets.xcassets */,
-				F32BDDC42CEF67E000D113D5 /* PrivacyInfo.xcprivacy */,
-				F32B055B2CECA31100D321BD /* Recording Model.swift */,
-				F32B054B2CECA2FD00D321BD /* Audio Manager */,
-				F32B05502CECA2FD00D321BD /* Views */,
-				F3D036FB2CECB70C00C4E1AC /* Settings */,
-				F32B05522CECA2FD00D321BD /* Support */,
-			);
-			path = "Voice Vault";
-			sourceTree = "<group>";
-		};
-		F32B054B2CECA2FD00D321BD /* Audio Manager */ = {
-			isa = PBXGroup;
-			children = (
-				F32B05492CECA2FD00D321BD /* Audio Recorder.swift */,
-				F32B054A2CECA2FD00D321BD /* Audio Player.swift */,
-			);
-			path = "Audio Manager";
-			sourceTree = "<group>";
-		};
-		F32B05502CECA2FD00D321BD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F32B054D2CECA2FD00D321BD /* Recordings List.swift */,
-				F32B05612CECA83200D321BD /* Recording Row.swift */,
-				F321926C2CEE02E7000E445E /* Sheet Share.swift */,
-				F321926E2CEE076E000E445E /* Data to File.swift */,
-				F32B054E2CECA2FD00D321BD /* Player Bar.swift */,
-				F32B054F2CECA2FD00D321BD /* Recorder Bar.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		F32B05522CECA2FD00D321BD /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				F32B05512CECA2FD00D321BD /* Extensions.swift */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		F3D036F82CECAF3C00C4E1AC /* Nav */ = {
-			isa = PBXGroup;
-			children = (
-				F32B05632CECA9AF00D321BD /* App Container.swift */,
-			);
-			path = Nav;
-			sourceTree = "<group>";
-		};
-		F3D036FB2CECB70C00C4E1AC /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				F321926A2CEDFA11000E445E /* Settings Parent.swift */,
-				F3D036F92CECB6B900C4E1AC /* Settings View.swift */,
-				F3D036FE2CECD01E00C4E1AC /* Value Storage.swift */,
-				F3D036FC2CECB79200C4E1AC /* Codec.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +73,9 @@
 				F32B05222CECA2DE00D321BD /* Resources */,
 			);
 			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				F3B7CE232F468C90004EB812 /* Voice Vault */,
 			);
 			name = "Voice Vault";
 			packageProductDependencies = (
@@ -174,7 +93,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1640;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					F32B05232CECA2DE00D321BD = {
 						CreatedOnToolsVersion = 16.2;
@@ -207,8 +126,6 @@
 		F32B05222CECA2DE00D321BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
-				F32BDDC52CEF67E000D113D5 /* PrivacyInfo.xcprivacy in Resources */,
-				F32B05442CECA2E800D321BD /* Assets.xcassets in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -217,22 +134,6 @@
 		F32B05202CECA2DE00D321BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
-				F32B055C2CECA31100D321BD /* Recording Model.swift in Sources */,
-				F32B05622CECA83200D321BD /* Recording Row.swift in Sources */,
-				F32B05532CECA2FD00D321BD /* Extensions.swift in Sources */,
-				F321926D2CEE02E7000E445E /* Sheet Share.swift in Sources */,
-				F32B05542CECA2FD00D321BD /* Recordings List.swift in Sources */,
-				F321926F2CEE076E000E445E /* Data to File.swift in Sources */,
-				F32B05642CECA9AF00D321BD /* App Container.swift in Sources */,
-				F3D036FF2CECD01E00C4E1AC /* Value Storage.swift in Sources */,
-				F321926B2CEDFA11000E445E /* Settings Parent.swift in Sources */,
-				F32B05552CECA2FD00D321BD /* Player Bar.swift in Sources */,
-				F32B05562CECA2FD00D321BD /* Audio Player.swift in Sources */,
-				F32B05572CECA2FD00D321BD /* Audio Recorder.swift in Sources */,
-				F3D036FD2CECB79200C4E1AC /* Codec.swift in Sources */,
-				F32B05592CECA2FD00D321BD /* Recorder Bar.swift in Sources */,
-				F32B05482CECA2E800D321BD /* Voice Vault.swift in Sources */,
-				F3D036FA2CECB6B900C4E1AC /* Settings View.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
@@ -246,7 +147,9 @@
 				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice Vault.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Voice Vault/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Voice Vault";
@@ -278,7 +181,9 @@
 				CODE_SIGN_ENTITLEMENTS = "Voice Vault/Voice Vault.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Voice Vault/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Voice Vault";
@@ -361,6 +266,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -418,6 +324,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
