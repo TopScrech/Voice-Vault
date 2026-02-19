@@ -10,23 +10,22 @@ struct SettingsView: View {
     private let bitrates = [1, 6, 8, 10, 12, 48, 96, 196]
     
     @State private var confirmDelete = false
-
     
     var body: some View {
         List {
             Picker("Codec", selection: $storage.selectedCodec) {
-                ForEach(Codec.allCases, id: \.rawValue) { codec in
-                    Text(codec.name)
-                        .tag(codec)
+                ForEach(Codec.allCases, id: \.rawValue) {
+                    Text($0.name)
+                        .tag($0)
                 }
             }
             .pickerStyle(.navigationLink)
             .scrollIndicators(.never)
             
             Picker("Bitrate", selection: $storage.bitrate) {
-                ForEach(bitrates, id: \.self) { bitrate in
-                    Text("\(bitrate) kHz")
-                        .tag(bitrate * 1000)
+                ForEach(bitrates, id: \.self) {
+                    Text("\($0) kHz")
+                        .tag($0 * 1000)
                 }
             }
             
@@ -43,9 +42,7 @@ struct SettingsView: View {
         }
         .navigationTitle("Settings")
         .confirmationDialog("Delete all recordings", isPresented: $confirmDelete) {
-            Button("Yes, delete all recordings", role: .destructive) {
-                deleteAll()
-            }
+            Button("Yes, delete all recordings", role: .destructive, action: deleteAll)
         } message: {
             Text("Are you sure you want to delete all recordings?")
         }

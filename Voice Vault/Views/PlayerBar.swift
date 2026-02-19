@@ -57,9 +57,7 @@ struct PlayerBar: View {
                     Spacer()
                     
                     // Stop button
-                    Button {
-                        audioPlayer.stopPlayback()
-                    } label: {
+                    Button(action: audioPlayer.stopPlayback) {
                         Image(systemName: "xmark.circle.fill")
                             .title2()
                             .imageScale(.large)

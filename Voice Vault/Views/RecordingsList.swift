@@ -39,7 +39,6 @@ struct RecordingsList: View {
         .safeAreaInset(edge: .bottom) {
             VStack {
                 PlayerBar()
-                
                 RecorderBar()
             }
             .background(.thinMaterial)

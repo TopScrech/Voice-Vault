@@ -70,24 +70,18 @@ struct RecordingRow: View {
             .presentationDetents([.medium])
         }
         .contextMenu {
-            Button {
+            Button("Rename", systemImage: "pencil") {
                 alertRename = true
-            } label: {
-                Label("Rename", systemImage: "pencil")
             }
             
-            Button {
+            Button("Share", systemImage: "square.and.arrow.up") {
                 sheetShare = true
-            } label: {
-                Label("Share", systemImage: "square.and.arrow.up")
             }
             
             Divider()
             
-            Button(role: .destructive) {
+            Button("Delete", systemImage: "trash", role: .destructive) {
                 modelContext.delete(rec)
-            } label: {
-                Label("Delete", systemImage: "trash")
             }
         }
     }
