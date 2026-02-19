@@ -12,6 +12,7 @@
 
 /* Begin PBXFileReference section */
 		F32B05242CECA2DE00D321BD /* Voice Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B7CE542F468E86004EB812 /* UNLICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = UNLICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -48,6 +49,7 @@
 		F32B051B2CECA2DE00D321BD = {
 			isa = PBXGroup;
 			children = (
+				F3B7CE542F468E86004EB812 /* UNLICENSE.txt */,
 				F3B7CE232F468C90004EB812 /* Voice Vault */,
 				F32B05252CECA2DE00D321BD /* Products */,
 			);
