@@ -1,8 +1,14 @@
 import ScrechKit
 import AVFoundation
+import OSLog
 
 @Observable
 final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
+        category: "AudioPlayer"
+    )
+    
     var audioPlayer: AVAudioPlayer?
     var currentlyPlaying: Recording?
     var isPlaying = false
@@ -17,9 +23,9 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
         do {
             try playbackSession.setCategory(.playback, mode: .spokenAudio)
             try playbackSession.setActive(true)
-            print("Start Recording - Playback session setted")
+            logger.info("Start Recording - Playback session set")
         } catch {
-            print("Play Recording - Failed to set up playback session")
+            logger.error("Play Recording - Failed to set up playback session: \(error.localizedDescription)")
         }
         
         do {
@@ -27,13 +33,13 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
             audioPlayer?.delegate = self
             audioPlayer?.play()
             isPlaying = true
-            print("Play Recording - Playing")
+            logger.info("Play Recording - Playing")
             
             withAnimation(.spring()) {
                 currentlyPlaying = recording
             }
         } catch {
-            print("Play Recording - Playback failed: - \(error)")
+            logger.error("Play Recording - Playback failed: \(error.localizedDescription)")
             
             withAnimation {
                 currentlyPlaying = nil
@@ -45,14 +51,14 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
         audioPlayer?.pause()
         isPlaying = false
         
-        print("Play Recording - Paused")
+        logger.info("Play Recording - Paused")
     }
     
     func resumePlayback() {
         audioPlayer?.play()
         isPlaying = true
         
-        print("Play Recording - Resumed")
+        logger.info("Play Recording - Resumed")
     }
     
     func stopPlayback() {
@@ -60,25 +66,25 @@ final class AudioPlayer: NSObject, AVAudioPlayerDelegate {
             audioPlayer?.stop()
             isPlaying = false
             
-            print("Play Recording - Stopped")
+            logger.info("Play Recording - Stopped")
             
             withAnimation(.spring) {
                 self.currentlyPlaying = nil
             }
         } else {
-            print("Play Recording - Failed to Stop playing - Coz the recording is not playing")
+            logger.error("Play Recording - Failed to stop playing because a recording is not active")
         }
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if flag {
-            isPlaying = false
-            print("Play Recording - Recoring finished playing")
-            
-            delay(1) {
-                withAnimation(.spring) {
-                    self.currentlyPlaying = nil
-                }
+        guard flag else { return }
+        
+        isPlaying = false
+        logger.info("Play Recording - Recording finished playing")
+        
+        delay(1) {
+            withAnimation(.spring) {
+                self.currentlyPlaying = nil
             }
         }
     }

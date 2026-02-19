@@ -1,7 +1,13 @@
 import SwiftUI
 import AVFoundation
+import OSLog
 
 struct RecordingRow: View {
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
+        category: "RecordingRow"
+    )
+
     @Environment(\.modelContext) private var modelContext
     @Environment(AudioPlayer.self) private var audioPlayer
     
@@ -95,7 +101,7 @@ struct RecordingRow: View {
             let duration = try AVAudioPlayer(data: recordingData).duration
             return DateComponentsFormatter.positional.string(from: duration) ?? "0:00"
         } catch {
-            print("Failed to get duration for recording '\(rec.name)'")
+            logger.error("Failed to get duration for recording '\(rec.name)'")
             return "0:00"
         }
     }

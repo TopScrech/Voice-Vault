@@ -1,6 +1,12 @@
 import SwiftUI
+import OSLog
 
 struct PlayerBar: View {
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
+        category: "PlayerBar"
+    )
+
     @Environment(AudioPlayer.self) private var audioPlayer
     
     @State private var sliderValue = 0.0
@@ -14,7 +20,7 @@ struct PlayerBar: View {
         if let player = audioPlayer.audioPlayer, let currentlyPlaying = audioPlayer.currentlyPlaying {
             VStack {
                 Slider(value: $sliderValue, in: 0...player.duration) { dragging in
-                    print("Editing the slider: \(dragging)")
+                    logger.debug("Editing the slider: \(dragging)")
                     isDragging = dragging
                     
                     if !dragging {

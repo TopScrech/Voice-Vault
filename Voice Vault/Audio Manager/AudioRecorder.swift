@@ -1,9 +1,15 @@
 import ScrechKit
 import SwiftData
 import AVFoundation
+import OSLog
 
 @Observable
 final class AudioRecorder {
+    private let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
+        category: "AudioRecorder"
+    )
+
     var audioRecorder: AVAudioRecorder?
     var isRecording = false
     var isPermissionGranted = false
@@ -47,7 +53,7 @@ final class AudioRecorder {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
         } catch {
-            print("Start Recording - Failed to set up recording session")
+            logger.error("Start Recording - Failed to set up recording session: \(error.localizedDescription)")
         }
         
         recordingDate = currentDateTime
@@ -76,7 +82,7 @@ final class AudioRecorder {
                 isRecording = true
             }
         } catch {
-            print("Start Recording - Could not start recording")
+            logger.error("Start Recording - Could not start recording: \(error.localizedDescription)")
         }
     }
     
@@ -93,10 +99,10 @@ final class AudioRecorder {
                 let recordingData = try Data(contentsOf: recordingURL)
                 saveNewRecording(modelContext, recordingData)
             } catch {
-                print("Stop Recording - Could not save to SwiftData: \(error)")
+                logger.error("Stop Recording - Could not save to SwiftData: \(error.localizedDescription)")
             }
         } else {
-            print("Stop Recording - Could not find the recording URL")
+            logger.error("Stop Recording - Could not find the recording URL")
         }
     }
     
@@ -124,7 +130,7 @@ final class AudioRecorder {
             do {
                 try FileManager.default.removeItem(at: recordingURL)
             } catch {
-                print("Stop Recording - Could not delete the recording file: \(error)")
+                logger.error("Stop Recording - Could not delete the recording file: \(error.localizedDescription)")
             }
         }
     }

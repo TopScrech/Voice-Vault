@@ -1,7 +1,13 @@
 import Foundation
+import OSLog
+
+private let dataToFileLogger = Logger(
+    subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
+    category: "DataToFile"
+)
 
 func dataToFile(_ recordingData: Data?) -> URL? {
-    print(#function)
+    dataToFileLogger.debug("\(#function)")
     
     guard let recordingData else {
         return nil
@@ -15,7 +21,7 @@ func dataToFile(_ recordingData: Data?) -> URL? {
         
         return tempFileURL
     } catch {
-        print("Failed to create temporary file: \(error.localizedDescription)")
+        dataToFileLogger.error("Failed to create temporary file: \(error.localizedDescription)")
         return nil
     }
 }
