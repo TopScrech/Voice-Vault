@@ -9,7 +9,7 @@ final class AudioRecorder {
         subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
         category: "AudioRecorder"
     )
-
+    
     var audioRecorder: AVAudioRecorder?
     var isRecording = false
     var isPermissionGranted = false
@@ -66,7 +66,7 @@ final class AudioRecorder {
             .appendingPathExtension("m4a")
         
         recordingURL = recordingFileURL
-                
+        
         let settings = [
             AVFormatIDKey: codec.rawValue,
             AVSampleRateKey: bitrate,

@@ -27,7 +27,7 @@ enum Codec: Int, Codable {
          twinVQ
     
     var id: Int { rawValue }
-
+    
     init?(rawValue: Int) {
         switch rawValue {
         case Int(kAudioFormatAppleLossless), 0: self = .appleLossless
@@ -57,7 +57,7 @@ enum Codec: Int, Codable {
         default: return nil
         }
     }
-
+    
     static var allCases: [Codec] = [
         .appleLossless,
         .ima4,

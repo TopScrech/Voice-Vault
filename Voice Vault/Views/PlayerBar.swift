@@ -6,7 +6,7 @@ struct PlayerBar: View {
         subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
         category: "PlayerBar"
     )
-
+    
     @Environment(AudioPlayer.self) private var audioPlayer
     
     @State private var sliderValue = 0.0

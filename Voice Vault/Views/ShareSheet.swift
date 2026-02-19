@@ -1,7 +1,7 @@
 import SwiftUI
 import ScrechKit
 
-struct SheetShare: View {
+struct ShareSheet: View {
     private let url: URL?
     
     init(_ url: URL?) {
@@ -29,5 +29,5 @@ struct SheetShare: View {
 }
 
 //#Preview {
-//    SheetShare()
+//    ShareSheet()
 //}

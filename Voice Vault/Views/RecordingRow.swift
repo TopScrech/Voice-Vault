@@ -7,7 +7,7 @@ struct RecordingRow: View {
         subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
         category: "RecordingRow"
     )
-
+    
     @Environment(\.modelContext) private var modelContext
     @Environment(AudioPlayer.self) private var audioPlayer
     
@@ -27,7 +27,7 @@ struct RecordingRow: View {
     
     @State private var alertRename = false
     @State private var sheetShare = false
-    @State private var localUrl: URL? = nil
+    @State private var localURL: URL? = nil
     
     var body: some View {
         @Bindable var rec = rec
@@ -65,13 +65,13 @@ struct RecordingRow: View {
         }
         .onDrag {
             let url = dataToFile(rec.recordingData)
-            localUrl = url
+            localURL = url
             
             return NSItemProvider(contentsOf: url)!
         }
         .sheet($sheetShare) {
             NavigationView {
-                SheetShare(localUrl)
+                ShareSheet(localURL)
             }
             .presentationDetents([.medium])
         }
