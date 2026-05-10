@@ -25,6 +25,14 @@ struct RecordingRow: View {
         getDuration(rec.recordingData)
     }
     
+    private var fileSize: String {
+        guard let byteCount = rec.recordingData?.count else {
+            return "0 KB"
+        }
+        
+        return byteCount.formatted(.byteCount(style: .file))
+    }
+    
     @State private var alertRename = false
     @State private var sheetShare = false
     @State private var localURL: URL? = nil
@@ -48,6 +56,8 @@ struct RecordingRow: View {
                         if let bitrate = rec.bitrate {
                             Text("\(bitrate / 1000) kHz")
                         }
+                        
+                        Text(fileSize)
                     }
                     .caption2()
                     .secondary()

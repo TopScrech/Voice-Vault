@@ -2,12 +2,12 @@ import SwiftUI
 import OSLog
 
 struct PlayerBar: View {
+    @Environment(AudioPlayer.self) private var audioPlayer
+    
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "dev.topscrech.Voice-Vault",
         category: "PlayerBar"
     )
-    
-    @Environment(AudioPlayer.self) private var audioPlayer
     
     @State private var sliderValue = 0.0
     @State private var isDragging = false
