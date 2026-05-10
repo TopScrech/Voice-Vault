@@ -48,14 +48,18 @@ struct RecordingRow: View {
                     Text(rec.name)
                         .bold(isPlaying)
                     
-                    HStack(spacing: 5) {
+                    HStack(spacing: 0) {
                         if let codec = rec.codec {
                             Text(codec.name)
                         }
                         
+                        Text(" • ")
+                        
                         if let bitrate = rec.bitrate {
                             Text("\(bitrate / 1000) kHz")
                         }
+                        
+                        Text(" • ")
                         
                         Text(fileSize)
                     }
