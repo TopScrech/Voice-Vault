@@ -6,7 +6,7 @@ private let dataToFileLogger = Logger(
     category: "DataToFile"
 )
 
-func dataToFile(_ recordingData: Data?) -> URL? {
+func dataToFile(_ recordingData: Data?, codec: Codec?) -> URL? {
     dataToFileLogger.debug("\(#function)")
     
     guard let recordingData else {
@@ -14,7 +14,8 @@ func dataToFile(_ recordingData: Data?) -> URL? {
     }
     
     let tempDirectory = FileManager.default.temporaryDirectory
-    let tempFileURL = tempDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("m4a")
+    let fileExtension = codec?.fileExtension ?? "m4a"
+    let tempFileURL = tempDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension(fileExtension)
     
     do {
         try recordingData.write(to: tempFileURL)

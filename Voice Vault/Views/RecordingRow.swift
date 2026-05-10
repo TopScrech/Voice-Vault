@@ -74,7 +74,7 @@ struct RecordingRow: View {
             TextField("New Name", text: $rec.name)
         }
         .onDrag {
-            let url = dataToFile(rec.recordingData)
+            let url = dataToFile(rec.recordingData, codec: rec.codec)
             localURL = url
             
             return NSItemProvider(contentsOf: url)!
@@ -91,6 +91,7 @@ struct RecordingRow: View {
             }
             
             Button("Share", systemImage: "square.and.arrow.up") {
+                localURL = dataToFile(rec.recordingData, codec: rec.codec)
                 sheetShare = true
             }
             
@@ -99,6 +100,7 @@ struct RecordingRow: View {
             Button("Delete", systemImage: "trash", role: .destructive) {
                 modelContext.delete(rec)
             }
+            .labelStyle(.iconOnly)
         }
     }
     

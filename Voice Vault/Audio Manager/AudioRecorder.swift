@@ -48,6 +48,7 @@ final class AudioRecorder {
     func startRecording(codec: Codec, bitrate: Int) {
         let format = "dd-MM-YY 'at' HH:mm:ss"
         let recordingSession = AVAudioSession.sharedInstance()
+        let sampleRate = codec.sampleRate(preferredSampleRate: bitrate)
         
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
@@ -63,14 +64,14 @@ final class AudioRecorder {
         
         let recordingFileURL = tempDir
             .appendingPathComponent(recordingName)
-            .appendingPathExtension("m4a")
+            .appendingPathExtension(codec.fileExtension)
         
         recordingURL = recordingFileURL
         
-        let settings = [
+        let settings: [String: Any] = [
             AVFormatIDKey: codec.rawValue,
-            AVSampleRateKey: bitrate,
-            AVNumberOfChannelsKey: 2,
+            AVSampleRateKey: sampleRate,
+            AVNumberOfChannelsKey: codec.channelCount,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]
         

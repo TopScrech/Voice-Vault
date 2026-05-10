@@ -85,6 +85,17 @@ enum Codec: Int, Codable {
         .twinVQ
     ]
     
+    static var recordingCases: [Codec] = [
+        .appleLossless,
+        .ima4,
+        .aac,
+        .flac,
+        .alaw,
+        .ulaw,
+        .linearPCM,
+        .ilbc
+    ]
+    
     var rawValue: Int {
         switch self {
         case .appleLossless: Int(kAudioFormatAppleLossless)
@@ -142,4 +153,50 @@ enum Codec: Int, Codable {
         case .twinVQ: "MPEG4 TwinVQ"
         }
     }
+    
+    var fileExtension: String {
+        switch self {
+        case .appleLossless, .aac:
+            "m4a"
+        case .flac:
+            "flac"
+        case .linearPCM:
+            "wav"
+        case .ima4, .alaw, .ulaw, .ilbc:
+            "caf"
+        default:
+            "caf"
+        }
+    }
+    
+    var channelCount: Int {
+        switch self {
+        case .ilbc:
+            1
+        default:
+            2
+        }
+    }
+    
+    func sampleRate(preferredSampleRate: Int) -> Int {
+        switch self {
+        case .alaw, .ulaw, .ilbc:
+            8_000
+        default:
+            Self.commonSampleRates.contains(preferredSampleRate) ? preferredSampleRate : 48_000
+        }
+    }
+    
+    static let commonSampleRates = [
+        8_000,
+        11_025,
+        16_000,
+        22_050,
+        44_100,
+        48_000,
+        88_200,
+        96_000,
+        176_400,
+        192_000
+    ]
 }

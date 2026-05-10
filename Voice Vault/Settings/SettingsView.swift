@@ -7,31 +7,33 @@ struct SettingsView: View {
     
     @Query private var recordings: [Recording]
     
-    private let bitrates = [1, 6, 8, 10, 12, 48, 96, 196]
-    
-    @State private var confirmDelete = false
+    @State private var alertDelete = false
     
     var body: some View {
         List {
-            Picker("Codec", selection: $storage.selectedCodec) {
-                ForEach(Codec.allCases, id: \.rawValue) {
-                    Text($0.name)
-                        .tag($0)
+            NavigationLink {
+                CodecPickerView(selectedCodec: $storage.selectedCodec)
+            } label: {
+                HStack {
+                    Text("Codec")
+                    
+                    Spacer()
+                    
+                    Text(storage.selectedCodec.name)
+                        .secondary()
                 }
             }
-            .pickerStyle(.navigationLink)
-            .scrollIndicators(.never)
             
             Picker("Bitrate", selection: $storage.bitrate) {
-                ForEach(bitrates, id: \.self) {
-                    Text("\($0) kHz")
-                        .tag($0 * 1000)
+                ForEach(Codec.commonSampleRates, id: \.self) {
+                    Text(sampleRateLabel($0))
+                        .tag($0)
                 }
             }
             
             Section {
                 Button("Delete all recordings", role: .destructive) {
-                    confirmDelete = true
+                    alertDelete = true
                 }
                 .disabled(recordings.isEmpty)
             } footer: {
@@ -41,8 +43,8 @@ struct SettingsView: View {
             }
         }
         .navigationTitle("Settings")
-        .confirmationDialog("Delete all recordings", isPresented: $confirmDelete) {
-            Button("Yes, delete all recordings", role: .destructive, action: deleteAll)
+        .alert("Delete all recordings", isPresented: $alertDelete) {
+            Button("Delete all", role: .destructive, action: deleteAll)
         } message: {
             Text("Are you sure you want to delete all recordings?")
         }
@@ -52,6 +54,11 @@ struct SettingsView: View {
         for rec in recordings {
             modelContext.delete(rec)
         }
+    }
+    
+    private func sampleRateLabel(_ sampleRate: Int) -> String {
+        let kilohertz = Double(sampleRate) / 1000
+        return kilohertz.formatted(.number.precision(.fractionLength(0...1))) + " kHz"
     }
 }
 
