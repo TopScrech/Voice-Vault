@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 100;
+	objectVersion = 110;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		F32B05242CECA2DE00D321BD /* Voice Vault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Vault.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B7CE552F468EDB004EB812 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F3C1C3FE2F48FCEA00D3D257 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		F3ED47713057341500B6F884 /* AGENTS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGENTS.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -51,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				F3B7CE552F468EDB004EB812 /* README.md */,
+				F3ED47713057341500B6F884 /* AGENTS.md */,
 				F3B7CE232F468C90004EB812 /* Voice Vault */,
 				F3C1C3FE2F48FCEA00D3D257 /* LICENSE.txt */,
 				F32B05252CECA2DE00D321BD /* Products */,
@@ -116,7 +118,7 @@
 			packageReferences = (
 				F32B055E2CECA67500D321BD /* XCRemoteSwiftPackageReference "ScrechKit" */,
 			);
-			preferredProjectObjectVersion = 100;
+			preferredProjectObjectVersion = 110;
 			productRefGroup = F32B05252CECA2DE00D321BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,6 +159,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Voice Vault/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Voice Vault";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is used to record voice memos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -192,6 +195,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Voice Vault/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Voice Vault";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Microphone is used to record voice memos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
